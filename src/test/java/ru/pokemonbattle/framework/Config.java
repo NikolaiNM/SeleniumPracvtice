@@ -75,9 +75,9 @@ public class Config {
     public static int getInt(String key, int defaultValue) {
         String rawValue = get(key, String.valueOf(defaultValue));
         try {
-            return Integer.parseInt(rawValue);
+            return Integer.parseInt(rawValue.trim());
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(
+            throw new IllegalStateException(
                     "Некорректное числовое значение для ключа '" + key + "': " + rawValue,
                     e
             );
