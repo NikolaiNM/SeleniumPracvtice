@@ -73,6 +73,27 @@ public class Config {
     }
 
     /**
+     * Получение ОБЯЗАТЕЛЬНОГО значения конфигурации.
+     * Если значение не найдено ни в системных свойствах, ни в файлах,
+     * выбрасывает исключение с название проблемного поля.
+     *
+     * @param key ключ настройки (например, "test.login")
+     * @return значение настройки
+     * @throws IllegalStateException если настройка отсутствует
+     */
+    public static String getRequired(String key) {
+        String value = get(key, null);
+
+        if (value == null || value.trim().isEmpty()) {
+            throw new IllegalStateException(
+                    String.format("Отсуствует настройка: '%s'. " +
+                            "Добавте ее в local.properties или передайте при запуске: -D%s=ваше_значение", key, key)
+            );
+        }
+        return value;
+    }
+
+    /**
      * Формирует полный URL на основе текущего окружения и относительного пути.
      *
      * @param path относительный путь (например "/login" или "login")
