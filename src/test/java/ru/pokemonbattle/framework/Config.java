@@ -91,7 +91,7 @@ public class Config {
         if (value == null || value.trim().isEmpty()) {
             throw new IllegalStateException(
                     String.format("Отсутствует настройка: '%s'. " +
-                            "Добавте ее в local.properties или передайте при запуске: -D%s=ваше_значение", key, key)
+                            "Добавьте её в local.properties или передайте при запуске: -D%s=ваше_значение", key, key)
             );
         }
         return value;

@@ -8,9 +8,9 @@ import ru.pokemonbattle.framework.Config;
  * Страница входа (/login)
  */
 public class LoginPage extends BasePage{
-    private final By EMAIL_INPUT = By.cssSelector("input[name='email']");
-    private final By PASSWORD_INPUT = By.cssSelector("input[name='password']");
-    private final By SUBMIT_BUTTON = By.cssSelector("button[type='submit']");
+    private static final By EMAIL_INPUT = By.cssSelector("input[name='email']");
+    private static final By PASSWORD_INPUT = By.cssSelector("input[name='password']");
+    private static final By SUBMIT_BUTTON = By.cssSelector("button[type='submit']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
