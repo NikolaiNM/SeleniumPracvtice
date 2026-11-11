@@ -32,7 +32,7 @@ src/test/
 - `env` — окружение: `prod` (по умолч.), `stage`.
 - `browser` — браузер: `chrome` (по умолч.), `firefox`, `edge`.
 - `headless` — запуск без окна: `false` (по умолч.), `true`.
-- `test.login` / `test.password` — учетные данные.
+- `test.email` / `test.password` — учетные данные.
 
 ## Запуск
 Можно запускать через maven
@@ -44,4 +44,4 @@ mvn test
 mvn test -Denv=stage -Dbrowser=firefox -Dheadless=true
 
 # Запуск с конкретными данными
-mvn test -Dtest.login=my_user -Dtest.password=my_password
+mvn test -Dtest.email=my_user -Dtest.password=my_password

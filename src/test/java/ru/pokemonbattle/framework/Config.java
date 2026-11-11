@@ -54,7 +54,7 @@ public class Config {
      *  <li>Значение из файлов properties</li>
      *  <li> {@code defaultValue} из кода</li>
      * </ol>
-     * @param key ключ настройки (например "browser" или test.login)
+     * @param key ключ настройки (например "browser" или test.email)
      * @param defaultValue значение по умолчанию, если ключ не найден
      * @return итоговое значение
      */
@@ -89,7 +89,7 @@ public class Config {
      * Если значение не найдено ни в системных свойствах, ни в файлах,
      * выбрасывает исключение с названием проблемного поля.
      *
-     * @param key ключ настройки (например, "test.login")
+     * @param key ключ настройки (например, "test.email")
      * @return значение настройки
      * @throws IllegalStateException если настройка отсутствует
      */
