@@ -1,22 +1,21 @@
 package ru.pokemonbattle.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import ru.pokemonbattle.TestData;
 
 import java.time.Duration;
 
 public abstract class BasePage {
+    private static final int DEFAULT_TIMEOUT = Integer.parseInt(TestData.TIMEOUT);
+
     protected final WebDriver driver;
     protected final WebDriverWait wait;
 
-    private static final int DEFAULT_TIMEOUT = 10;
-
-    public BasePage(WebDriver driver) {
+    protected BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
     }
@@ -28,5 +27,11 @@ public abstract class BasePage {
 
     protected String getTextWhenVisible(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
+    }
+
+    public void type(By locator, String text) {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.clear();
+        element.sendKeys(text);
     }
 }

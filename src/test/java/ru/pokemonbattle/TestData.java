@@ -9,5 +9,5 @@ public class TestData {
     public static final String PASSWORD =  Config.getRequired("test.password");
     public static final String EXPECTED_TRAINER_ID = Config.getRequired("test.trainer_id");
 
-
+    public static final String TIMEOUT = Config.getRequired("test.trainer_id");
 }
