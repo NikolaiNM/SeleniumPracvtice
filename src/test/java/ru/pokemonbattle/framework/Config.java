@@ -73,7 +73,15 @@ public class Config {
     }
 
     public static int getInt(String key, int defaultValue) {
-        return Integer.parseInt(get(key, String.valueOf(defaultValue)));
+        String rawValue = get(key, String.valueOf(defaultValue));
+        try {
+            return Integer.parseInt(rawValue);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(
+                    "Некорректное числовое значение для ключа '" + key + "': " + rawValue,
+                    e
+            );
+        }
     }
 
     /**

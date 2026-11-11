@@ -24,7 +24,7 @@ public class LoginPage extends BasePage{
     public MainPage loginAs(String login, String password) {
         type(EMAIL_INPUT, login);
         type(PASSWORD_INPUT, password);
-        clickWhenReady(SUBMIT_BUTTON);
+        click(SUBMIT_BUTTON);
 
         return new MainPage(driver);
     }

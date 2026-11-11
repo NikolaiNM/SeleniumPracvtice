@@ -13,10 +13,10 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Успешная авторизация и проверка отображения ID тренера")
-    public void testSuccessfulLogin() {
+    public void showsTrainerIdAfterSuccessfulLogin() {
         MainPage mainPage = new LoginPage(driver)
                 .open()
-                .loginAs(TestData.LOGIN,TestData.PASSWORD);
+                .loginAs(TestData.EMAIL,TestData.PASSWORD);
 
         assertThat(mainPage.trainerId())
                 .as("ID тренера")
