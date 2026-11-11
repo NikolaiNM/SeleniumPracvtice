@@ -21,8 +21,8 @@ public class LoginPage extends BasePage{
         return this;
     }
 
-    public MainPage loginAs(String login, String password) {
-        type(EMAIL_INPUT, login);
+    public MainPage loginAs(String email, String password) {
+        type(EMAIL_INPUT, email);
         type(PASSWORD_INPUT, password);
         click(SUBMIT_BUTTON);
 
