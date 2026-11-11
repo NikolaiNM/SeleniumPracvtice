@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.pokemonbattle.TestData;
+import ru.pokemonbattle.framework.Config;
 
 import java.time.Duration;
 
 public abstract class BasePage {
-    private static final int DEFAULT_TIMEOUT = Integer.parseInt(TestData.TIMEOUT);
+    public static final int DEFAULT_TIMEOUT = Config.getInt("timeout.seconds",10);
 
     protected final WebDriver driver;
     protected final WebDriverWait wait;

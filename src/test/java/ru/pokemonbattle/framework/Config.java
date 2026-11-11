@@ -72,6 +72,10 @@ public class Config {
         return defaultValue;
     }
 
+    public static int getInt(String key, int defaultValue) {
+        return Integer.parseInt(get(key, String.valueOf(defaultValue)));
+    }
+
     /**
      * Получение ОБЯЗАТЕЛЬНОГО значения конфигурации.
      * Если значение не найдено ни в системных свойствах, ни в файлах,
