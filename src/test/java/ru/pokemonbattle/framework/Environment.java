@@ -21,11 +21,11 @@ public enum Environment {
     }
 
     /**
-     * Преобразует стоку в enum окружения.
+     * Преобразует строку в enum окружения.
      *
      * @param envName название окружения (например "PROD" или "STAGE")
      * @return соответствующее окружение (PROD, если строка пустая или null)
-     * @throws IllegalArgumentException если переданно неизветсное значение
+     * @throws IllegalArgumentException если передано неизветсное значение
      */
     public static Environment fromString(String envName) {
         if (envName == null || envName.trim().isEmpty()) {
