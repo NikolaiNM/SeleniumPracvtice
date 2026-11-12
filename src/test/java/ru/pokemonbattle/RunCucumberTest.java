@@ -6,7 +6,7 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features")
+@SelectPackages("features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "ru.pokemonbattle.steps")
 public class RunCucumberTest {
 }
