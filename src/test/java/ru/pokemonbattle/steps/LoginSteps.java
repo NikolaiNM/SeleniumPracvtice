@@ -8,7 +8,7 @@ import ru.pokemonbattle.framework.TestContext;
 import ru.pokemonbattle.pages.LoginPage;
 import ru.pokemonbattle.pages.MainPage;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginSteps {
     private final TestContext context;
@@ -32,6 +32,7 @@ public class LoginSteps {
     @Then("вижу ID своего тренера")
     public void trainerIdIsShown() {
         assertThat(mainPage.trainerId())
+                .as("ID тренера")
                 .isEqualTo(TestData.EXPECTED_TRAINER_ID);
     }
 
